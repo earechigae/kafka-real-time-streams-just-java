@@ -1,0 +1,4 @@
+# kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 3 --partitions 2 --topic active-inventories & kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 3 --partitions 2 --topic ad-clicks
+
+echo "kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 3 --partitions 2 --topic active-inventories & kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 3 --partitions 2 --topic ad-clicks"
+kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 3 --partitions 2 --topic active-inventories & kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 3 --partitions 2 --topic ad-clicks

@@ -1,0 +1,14 @@
+
+// Example oh how Kafka Streams closes the first time window with this order of events (2 minutes of grace period).
+// First time window:  Window start: 2019-02-05T10:00Z, Window end: 2019-02-05T10:05Z
+// Second time window: Window start: 2019-02-05T10:00Z Window end: 2019-02-05T10:05Z
+STR1534:{"InvoiceNumber": 101,"CreatedTime": "2019-02-05T10:01:00.00Z","StoreID": "STR1534","TotalAmount": 1920}
+STR1534:{"InvoiceNumber": 102,"CreatedTime": "2019-02-05T10:08:10.00Z","StoreID": "STR1534","TotalAmount": 2400}
+STR1534:{"InvoiceNumber": 103,"CreatedTime": "2019-02-05T10:03:00.00Z","StoreID": "STR1534","TotalAmount": 6375}
+
+// Example oh how Kafka Streams does not close the first time window with this order of events (2 minutes of grace period).
+// First time window:  Window start: 2019-02-05T10:00Z, Window end: 2019-02-05T10:05Z
+// Second time window: Window start: 2019-02-05T10:00Z Window end: 2019-02-05T10:05Z
+STR1534:{"InvoiceNumber": 101,"CreatedTime": "2019-02-05T10:01:00.00Z","StoreID": "STR1534","TotalAmount": 1920}
+STR1534:{"InvoiceNumber": 102,"CreatedTime": "2019-02-05T10:06:10.00Z","StoreID": "STR1534","TotalAmount": 2400}
+STR1534:{"InvoiceNumber": 103,"CreatedTime": "2019-02-05T10:03:00.00Z","StoreID": "STR1534","TotalAmount": 6375}
